@@ -14,7 +14,7 @@ import json, uuid, secrets, hashlib, io   # ⬅️ add io here
 import streamlit as st
 import pandas as pd
 from PIL import Image
-import qrcode
+import qrcode as Q
 
 
 # ------------------------------- Config -------------------------------
@@ -239,7 +239,7 @@ def make_qr_image(data: str, box_size: int = 10, border: int = 4) -> Image.Image
     """
     Core QR generator (qrbasepython style) – data should be a string (URL or code).
     """
-    qr = qrcode.QRCode(
+    qr = Q.QRCode(
         version=1,
         box_size=box_size,
         border=border
